@@ -1,4 +1,4 @@
-package com.example.clothify_store;
+package com.coursework.clothify_store;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +10,8 @@ import java.io.IOException;
 public class AppInitializer extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(AppInitializer.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/coursework/clothify_store/LoginForm.fxml"));
+        Scene scene = new Scene(loader.load());
         stage.setScene(scene);
         stage.show();
     }

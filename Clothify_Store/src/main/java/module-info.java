@@ -1,8 +1,9 @@
-module com.example.clothify_store {
+module com.coursework.clothify_store {
     requires javafx.controls;
     requires javafx.fxml;
-            
-                            
-    opens com.example.clothify_store to javafx.fxml;
-    exports com.example.clothify_store;
+    requires jfoenix;
+
+
+    opens com.coursework.clothify_store to javafx.fxml;
+    exports com.coursework.clothify_store;
 }
