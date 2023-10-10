@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coursework.clothify_store.controller.AdminDashboard">
+   <children>
+      <ImageView fitHeight="960.0" fitWidth="1462.0" layoutY="-60.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/backgroung-img.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="-2.0" layoutY="-1.0" opacity="0.8" prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: black;" text="Admin Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnExit" layoutX="1331.0" layoutY="28.0" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Exit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="20.0" layoutY="132.0" prefHeight="740.0" prefWidth="1400.0">
+         <children>
+            <AnchorPane layoutX="8.0" layoutY="7.0" prefHeight="725.0" prefWidth="350.0">
+               <children>
+                  <Label layoutX="33.0" layoutY="50.0" prefHeight="80.0" prefWidth="285.0" style="-fx-background-color: black; -fx-background-radius: 20; -fx-label-padding: 10;" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="270.0" prefHeight="80.0" prefWidth="285.0" style="-fx-background-color: gray; -fx-background-radius: 20; -fx-label-padding: 10;" text="Products">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="380.0" prefHeight="80.0" prefWidth="285.0" style="-fx-background-color: gray; -fx-background-radius: 20; -fx-label-padding: 10;" text="Place Order">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="490.0" prefHeight="80.0" prefWidth="285.0" style="-fx-background-color: gray; -fx-background-radius: 20; -fx-label-padding: 10;" text="Suppliers">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="600.0" prefHeight="80.0" prefWidth="285.0" style="-fx-background-color: gray; -fx-background-radius: 20; -fx-label-padding: 10;" text="Reports">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="160.0" prefHeight="80.0" prefWidth="285.0" style="-fx-background-color: gray; -fx-background-radius: 20; -fx-label-padding: 10;" text="Employees">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="233.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/dashboard.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="233.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/candidates.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="75.0" layoutX="226.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/brand.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="75.0" layoutX="242.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/check-out.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="226.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/supplier.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="226.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/report.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="358.0" layoutY="20.0" opacity="0.75" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+               <children>
+                  <Label alignment="CENTER" layoutX="298.0" layoutY="174.0" prefHeight="158.0" prefWidth="405.0" text="10:24 AM" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="350.0" layoutY="114.0" prefHeight="60.0" prefWidth="300.0" text="2023/10/10" textFill="#c6c6c6">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="199.0" fitWidth="245.0" layoutX="403.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/admin.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="458.0" layoutY="573.0" prefHeight="35.0" prefWidth="90.0" text="Admin" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
