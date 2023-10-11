@@ -5,8 +5,9 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+
 import service.LoginFormService;
+import service.impl.LoginFormServiceImpl;
 
 public class LoginFormController {
     @FXML
@@ -22,7 +23,7 @@ public class LoginFormController {
     private JFXPasswordField txtPassword;
 
     @FXML
-    private Label lblForgotPassword;
+    private JFXButton btnForgotPassword;
 
     @FXML
     private JFXButton btnLogin;
@@ -36,10 +37,26 @@ public class LoginFormController {
     @FXML
     private JFXButton btnExit;
 
-    LoginFormService loginFormService = new LoginFormService();
+    LoginFormService loginFormServiceImpl = new LoginFormServiceImpl();
 
     @FXML
     void btnExitOnClick(ActionEvent event) {
-        loginFormService.exit();
+        loginFormServiceImpl.exit();
+    }
+    @FXML
+    void btnLoginOnAction(ActionEvent event) {
+        loginFormServiceImpl.login(event);
+    }
+    @FXML
+    void btnSignInOnAction(ActionEvent event) {
+        loginFormServiceImpl.signIn(event);
+    }
+    @FXML
+    void btnForgotPasswordOnAction(ActionEvent event) {
+        loginFormServiceImpl.forgotPassword(event);
+    }
+    @FXML
+    void btnClearOnAction(ActionEvent event) {
+
     }
 }

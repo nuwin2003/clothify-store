@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
-      <ImageView fitHeight="961.0" fitWidth="1499.0" layoutY="-61.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="961.0" fitWidth="1447.0" layoutX="-5.0" layoutY="-61.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/backgroung-img.jpg" />
          </image>
@@ -27,24 +27,24 @@
             <Font name="System Bold" size="64.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="320.0" layoutY="220.0" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+      <AnchorPane layoutX="320.0" layoutY="188.0" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: black; -fx-background-radius: 20;">
          <children>
-            <ImageView blendMode="HARD_LIGHT" fitHeight="264.0" fitWidth="276.0" layoutX="53.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView blendMode="HARD_LIGHT" fitHeight="264.0" fitWidth="276.0" layoutX="27.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="133.0" layoutY="247.0" text="Clothify Store">
+            <Label layoutX="107.0" layoutY="247.0" text="Clothify Store">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <ImageView fitHeight="125.0" fitWidth="150.0" layoutX="129.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="125.0" fitWidth="150.0" layoutX="103.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/clothes.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="60.0" layoutY="503.0" prefHeight="21.0" prefWidth="263.0" text="clothfystore@gmail.com">
+            <Label alignment="CENTER" layoutX="34.0" layoutY="503.0" prefHeight="21.0" prefWidth="263.0" text="clothfystore@gmail.com">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -92,15 +92,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXPasswordField>
-                  <Label fx:id="lblForgotPassword" layoutX="229.0" layoutY="322.0" prefHeight="25.0" prefWidth="190.0" style="-fx-text-fill: blue;" text="Forgot Password ?">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-                  <JFXButton fx:id="btnLogin" layoutX="219.0" layoutY="375.0" prefHeight="40.0" prefWidth="90.0" style="-fx-background-radius: 10; -fx-background-color: blue;" text="Log in" textFill="WHITE">
+                  <JFXButton fx:id="btnLogin" layoutX="234.0" layoutY="375.0" onAction="#btnLoginOnAction" prefHeight="40.0" prefWidth="90.0" style="-fx-background-radius: 10; -fx-background-color: blue;" text="Log in" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -108,7 +100,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="btnClear" layoutX="324.0" layoutY="375.0" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Clear" textFill="WHITE">
+                  <JFXButton fx:id="btnClear" layoutX="334.0" layoutY="375.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: black; -fx-background-radius: 10;" text="Clear" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -121,7 +113,15 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="btnSignIn" layoutX="289.0" layoutY="438.0" prefHeight="40.0" prefWidth="90.0" style="-fx-background-radius: 10; -fx-background-color: red;" text="Sign in" textFill="WHITE">
+                  <JFXButton fx:id="btnSignIn" layoutX="289.0" layoutY="438.0" onAction="#btnSignInOnAction" prefHeight="40.0" prefWidth="90.0" style="-fx-background-radius: 10; -fx-background-color: red;" text="Sign in" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnForgotPassword" layoutX="234.0" layoutY="317.0" onAction="#btnForgotPasswordOnAction" prefHeight="15.0" prefWidth="180.0" text="Forgot Password ?" textFill="#0a01ff">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

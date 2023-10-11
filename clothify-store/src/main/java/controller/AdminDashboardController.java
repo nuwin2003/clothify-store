@@ -1,37 +1,46 @@
 package controller;
 
+
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import service.impl.AdminDashboardService;
 
 public class AdminDashboardController {
     @FXML
     private JFXButton btnExit;
 
     @FXML
-    private Label lblDashboard;
+    private JFXButton btnEmployees;
 
     @FXML
-    private Label lblProducts;
+    private JFXButton btnProducts;
 
     @FXML
-    private Label lblPlaceOrder;
+    private JFXButton btnPlaceOrder;
 
     @FXML
-    private Label lblSuppliers;
+    private JFXButton btnSuppliers;
 
     @FXML
-    private Label lblReports;
+    private JFXButton btnCustomers;
 
     @FXML
-    private Label lblEmployees;
+    private JFXButton btnReports;
 
     @FXML
-    private Label lblCustomers;
+    private JFXButton btnDashboard;
 
     @FXML
     private Label lblTime;
 
     @FXML
     private Label lblDate;
+
+    AdminDashboardService adminDashboardService = new AdminDashboardService();
+    @FXML
+    void btnExitOnAction(ActionEvent event) {
+        adminDashboardService.exit(event);
+    }
 }
