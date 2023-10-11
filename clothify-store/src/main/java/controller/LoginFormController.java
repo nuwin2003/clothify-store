@@ -1,4 +1,4 @@
-package com.coursework.clothify_store.controller;
+package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class LoginFormController {
-
     @FXML
     private JFXButton btnAdmin;
 
@@ -34,5 +33,4 @@ public class LoginFormController {
 
     @FXML
     private JFXButton btnExit;
-
 }
