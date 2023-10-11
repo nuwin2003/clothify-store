@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane opacity="0.75" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="174.0" prefHeight="45.0" prefWidth="210.0" text="Employee Id :" textFill="#c3c3c3">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="219.0" prefHeight="45.0" prefWidth="210.0" text="Employee Name :" textFill="#c3c3c3">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="264.0" prefHeight="45.0" prefWidth="210.0" text="E-mail :" textFill="#c3c3c3">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="305.0" prefHeight="45.0" prefWidth="210.0" text="Contact Number :" textFill="#c3c3c3">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeId" layoutX="506.0" layoutY="174.0" prefHeight="45.0" prefWidth="210.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmployeeName" layoutX="506.0" layoutY="219.0" prefHeight="45.0" prefWidth="210.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmail" layoutX="506.0" layoutY="264.0" prefHeight="45.0" prefWidth="210.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContactNumber" layoutX="506.0" layoutY="305.0" prefHeight="45.0" prefWidth="210.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="141.0" fitWidth="228.0" layoutX="436.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/employees.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnUpdate" layoutX="751.0" layoutY="197.0" prefHeight="45.0" prefWidth="88.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="Update" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="751.0" layoutY="252.0" prefHeight="45.0" prefWidth="88.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Delete" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="751.0" layoutY="309.0" prefHeight="45.0" prefWidth="88.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Clear" textFill="#111111">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnRegisterEmployee" layoutX="751.0" layoutY="40.0" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register Employee" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblEmployee" blendMode="EXCLUSION" layoutX="26.0" layoutY="386.0" prefHeight="279.0" prefWidth="948.0">
+        <columns>
+          <TableColumn fx:id="colEmpId" prefWidth="153.0" text="Employee Id" />
+          <TableColumn fx:id="colEmpName" prefWidth="302.0" text="Employee Name" />
+            <TableColumn fx:id="colEmpEmail" prefWidth="301.0" text="E-mail" />
+            <TableColumn fx:id="ColContactNumber" prefWidth="190.0" text="Contact Number" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="961.0" fitWidth="1499.0" layoutY="-61.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/backgroung-img.jpg" />
+            <Image url="@../images/backgroung-img.jpg" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="482.0" layoutY="9.0" prefHeight="56.0" prefWidth="477.0" text="2023/10/11">
@@ -31,7 +31,7 @@
          <children>
             <ImageView blendMode="HARD_LIGHT" fitHeight="264.0" fitWidth="276.0" layoutX="53.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/logo.png" />
+                  <Image url="@../images/logo.png" />
                </image>
             </ImageView>
             <Label layoutX="133.0" layoutY="247.0" text="Clothify Store">
@@ -41,7 +41,7 @@
             </Label>
             <ImageView fitHeight="125.0" fitWidth="150.0" layoutX="129.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/clothes.png" />
+                  <Image url="@../images/clothes.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="60.0" layoutY="503.0" prefHeight="21.0" prefWidth="263.0" text="clothfystore@gmail.com">
@@ -133,7 +133,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnExit" layoutX="1321.0" layoutY="18.0" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Exit" textFill="WHITE">
+      <JFXButton fx:id="btnExit" layoutX="1321.0" layoutY="18.0" onAction="#btnExitOnClick" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Exit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

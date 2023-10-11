@@ -6,7 +6,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 
-public class UserRegistration {
+public class UserRegistrationController {
     @FXML
     private JFXTextField txtAdminUserName;
 

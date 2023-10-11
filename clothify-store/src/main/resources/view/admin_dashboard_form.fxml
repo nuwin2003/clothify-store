@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="960.0" fitWidth="1462.0" layoutY="-60.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/backgroung-img.jpg" />
+            <Image url="@../images/backgroung-img.jpg" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="-2.0" layoutY="-1.0" opacity="0.8" prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: black;" text="Admin Dashboard" textFill="WHITE">
@@ -60,32 +60,32 @@
                   </Label>
                   <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="233.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/dashboard.png" />
+                        <Image url="@../images/dashboard.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="233.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/candidates.png" />
+                        <Image url="@../images/candidates.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="65.0" fitWidth="75.0" layoutX="226.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/brand.png" />
+                        <Image url="@../images/brand.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="65.0" fitWidth="75.0" layoutX="242.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/check-out.png" />
+                        <Image url="@../images/check-out.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="226.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/supplier.png" />
+                        <Image url="@../images/supplier.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="226.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/report.png" />
+                        <Image url="@../images/report.png" />
                      </image>
                   </ImageView>
                </children>
@@ -104,7 +104,7 @@
                   </Label>
                   <ImageView fitHeight="199.0" fitWidth="245.0" layoutX="403.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../clothify-store/clothify_store/src/main/resources/images/admin.png" />
+                        <Image url="@../images/admin.png" />
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" layoutX="458.0" layoutY="573.0" prefHeight="35.0" prefWidth="90.0" text="Admin" textFill="WHITE">
