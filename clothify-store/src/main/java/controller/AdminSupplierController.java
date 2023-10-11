@@ -6,15 +6,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class AdminEmployeeController {
+public class AdminSupplierController {
     @FXML
-    private JFXTextField txtEmployeeId;
+    private JFXTextField txtSupplierId;
 
     @FXML
-    private JFXTextField txtEmployeeName;
+    private JFXTextField txtSupplierName;
 
     @FXML
-    private JFXTextField txtEmployeeEmail;
+    private JFXTextField txtSupplierEmail;
 
     @FXML
     private JFXTextField txtContactNumber;
@@ -29,19 +29,19 @@ public class AdminEmployeeController {
     private JFXButton btnClear;
 
     @FXML
-    private JFXButton btnRegisterEmployee;
+    private JFXButton btnRegisterSupplier;
 
     @FXML
-    private TableView<?> tblEmployee;
+    private TableView<?> tblSupplier;
 
     @FXML
-    private TableColumn<?, ?> colEmpId;
+    private TableColumn<?, ?> colSupplierId;
 
     @FXML
-    private TableColumn<?, ?> colEmpName;
+    private TableColumn<?, ?> colSupplierName;
 
     @FXML
-    private TableColumn<?, ?> colEmpEmail;
+    private TableColumn<?, ?> colSupplierEmail;
 
     @FXML
     private TableColumn<?, ?> colContactNumber;
