@@ -38,5 +38,14 @@ public class UserRegistrationController {
     private JFXTextField txtPassword;
 
     @FXML
-    private JFXButton btnCheck1;
+    private JFXButton btnRegister;
+
+    @FXML
+    private JFXButton btnViewUsers;
+
+    @FXML
+    private JFXTextField txtContactNumber;
+
+    @FXML
+    private JFXButton btnBack;
 }

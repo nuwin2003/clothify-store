@@ -42,7 +42,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtEmail" layoutX="506.0" layoutY="264.0" prefHeight="45.0" prefWidth="210.0">
+      <JFXTextField fx:id="txtEmployeeEmail" layoutX="506.0" layoutY="264.0" prefHeight="45.0" prefWidth="210.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

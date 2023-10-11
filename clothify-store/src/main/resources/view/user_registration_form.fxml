@@ -89,7 +89,7 @@
       </AnchorPane>
       <AnchorPane layoutX="140.0" layoutY="517.0" prefHeight="363.0" prefWidth="1196.0" style="-fx-background-color: black; -fx-background-radius: 20;">
          <children>
-            <Label layoutX="367.0" layoutY="52.0" prefHeight="35.0" prefWidth="229.0" text="New User Name    :" textFill="#c9c9c9">
+            <Label layoutX="367.0" layoutY="52.0" prefHeight="35.0" prefWidth="229.0" text="User Name             :" textFill="#c9c9c9">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -129,19 +129,29 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXTextField>
-            <JFXButton layoutX="589.0" layoutY="286.0" prefHeight="40.0" prefWidth="114.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register" textFill="WHITE">
+            <JFXButton fx:id="btnRegister" layoutX="589.0" layoutY="306.0" prefHeight="40.0" prefWidth="114.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="721.0" layoutY="286.0" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="View Users" textFill="WHITE">
+            <JFXButton fx:id="btnViewUsers" layoutX="720.0" layoutY="306.0" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="View Users" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXButton>
+            <Label layoutX="367.0" layoutY="248.0" prefHeight="35.0" prefWidth="229.0" text="Contact Number   :" textFill="#c9c9c9">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtContactNumber" layoutX="589.0" layoutY="246.0" prefHeight="35.0" prefWidth="229.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnCheck1" layoutX="28.0" layoutY="25.0" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: yellow; -fx-background-radius: 10;" text="Back">
+      <JFXButton fx:id="btnBack" layoutX="28.0" layoutY="25.0" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: yellow; -fx-background-radius: 10;" text="Back">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
