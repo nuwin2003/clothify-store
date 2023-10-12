@@ -4,7 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import service.impl.UserRegistrationService;
+
 
 public class UserRegistrationController {
     @FXML
@@ -48,4 +51,31 @@ public class UserRegistrationController {
 
     @FXML
     private JFXButton btnBack;
+
+    UserRegistrationService userRegistrationService = new UserRegistrationService();
+    @FXML
+    void btnBackOnAction(ActionEvent event) {
+        userRegistrationService.back(event);
+    }
+
+    @FXML
+    void btnCheckOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnRegisterOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnSendOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnViewUsersOAction(ActionEvent event) {
+
+    }
+
 }

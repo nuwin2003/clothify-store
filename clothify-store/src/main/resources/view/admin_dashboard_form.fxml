@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -23,6 +24,9 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <AnchorPane layoutX="18.0" layoutY="113.0" prefHeight="642.0" prefWidth="1400.0">
          <children>
@@ -32,6 +36,9 @@
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="77.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -42,6 +49,9 @@
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="77.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,6 +62,9 @@
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <ImageView fitHeight="65.0" fitWidth="75.0" layoutX="71.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -62,6 +75,9 @@
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="77.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -72,6 +88,9 @@
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="71.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -82,6 +101,9 @@
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="71.0" layoutY="558.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -92,6 +114,9 @@
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="71.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -100,7 +125,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="bodyAnchor" layoutX="358.0" opacity="0.85" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+            <AnchorPane fx:id="bodyAnchor" layoutX="358.0" opacity="0.9" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-background-radius: 20;">
                <children>
                   <Label fx:id="lblTime" alignment="CENTER" layoutX="298.0" layoutY="174.0" prefHeight="158.0" prefWidth="405.0" text="10:24 AM" textFill="WHITE">
                      <font>

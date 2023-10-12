@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -52,21 +53,33 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton fx:id="btnDelete" layoutX="751.0" layoutY="232.0" prefHeight="45.0" prefWidth="88.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Delete" textFill="#fcfcfc">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton fx:id="btnClear" layoutX="751.0" layoutY="288.0" prefHeight="45.0" prefWidth="88.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Clear" textFill="#111111">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton fx:id="btnRegisterProduct" layoutX="751.0" layoutY="40.0" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register Product" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <TableView fx:id="tblProduct" blendMode="EXCLUSION" layoutX="26.0" layoutY="371.0" prefHeight="270.0" prefWidth="948.0">
          <columns>

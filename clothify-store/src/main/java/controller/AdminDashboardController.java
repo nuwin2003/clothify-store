@@ -4,14 +4,11 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import service.impl.AdminDashboardService;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class AdminDashboardController {
     @FXML
@@ -50,46 +47,28 @@ public class AdminDashboardController {
     AdminDashboardService adminDashboardService = new AdminDashboardService();
 
     @FXML
-    void btnCustomersOnAction(ActionEvent event) {
-
+    void btnCustomersOnAction(ActionEvent event) throws IOException {
+        adminDashboardService.showCustomerForm(bodyAnchor);
     }
 
     @FXML
     void btnDashboardOnAction(ActionEvent event) {
-
+        adminDashboardService.showDashboard(event);
     }
 
     @FXML
     void btnEmployeesOnAction(ActionEvent event) throws IOException {
-        URL resource =this.getClass().getResource("/view/admin_employee_form.fxml");
-
-        assert resource != null;
-
-        Parent load = (Parent) FXMLLoader.load(resource);
-        this.bodyAnchor.getChildren().clear();
-        this.bodyAnchor.getChildren().add(load);
+        adminDashboardService.showEmployeeForm(bodyAnchor);
     }
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) throws IOException {
-        URL resource =this.getClass().getResource("/view/admin_placeorder_form.fxml");
-
-        assert resource != null;
-
-        Parent load = (Parent) FXMLLoader.load(resource);
-        this.bodyAnchor.getChildren().clear();
-        this.bodyAnchor.getChildren().add(load);
+        adminDashboardService.showPlaceOrderForm(bodyAnchor);
     }
 
     @FXML
     void btnProductsOnAction(ActionEvent event) throws IOException {
-        URL resource =this.getClass().getResource("/view/admin_products_form.fxml");
-
-        assert resource != null;
-
-        Parent load = (Parent) FXMLLoader.load(resource);
-        this.bodyAnchor.getChildren().clear();
-        this.bodyAnchor.getChildren().add(load);
+        adminDashboardService.showProductsForm(bodyAnchor);
     }
 
     @FXML
@@ -99,17 +78,11 @@ public class AdminDashboardController {
 
     @FXML
     void btnSuppliersOnAction(ActionEvent event) throws IOException {
-        URL resource =this.getClass().getResource("/view/admin_supplier_form.fxml");
-
-        assert resource != null;
-
-        Parent load = (Parent) FXMLLoader.load(resource);
-        this.bodyAnchor.getChildren().clear();
-        this.bodyAnchor.getChildren().add(load);
+        adminDashboardService.showSupplierForm(bodyAnchor);
     }
 
     @FXML
     void btnExitOnAction(ActionEvent event) {
-        adminDashboardService.exit(event);
+        adminDashboardService.exit();
     }
 }

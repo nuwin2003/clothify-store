@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -22,11 +23,17 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton fx:id="btnRegisterCustomer" layoutX="825.0" layoutY="74.0" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register " textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <Label layoutX="26.0" layoutY="74.0" prefHeight="45.0" prefWidth="210.0" text="Customer Name :" textFill="#c3c3c3">
          <font>
@@ -84,6 +91,9 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="655.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -133,6 +143,9 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="805.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
          <image>

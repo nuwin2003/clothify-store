@@ -13,12 +13,12 @@
 
 <AnchorPane opacity="0.75" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="160.0" prefHeight="45.0" prefWidth="210.0" text="Supplier Id :" textFill="#c3c3c3">
+      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="160.0" prefHeight="45.0" prefWidth="210.0" text="Customer Id :" textFill="#c3c3c3">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="205.0" prefHeight="45.0" prefWidth="210.0" text="Supplier Name :" textFill="#c3c3c3">
+      <Label alignment="CENTER_RIGHT" layoutX="290.0" layoutY="205.0" prefHeight="45.0" prefWidth="210.0" text="Customer Name :" textFill="#c3c3c3">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -33,17 +33,17 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtSupplierId" layoutX="506.0" layoutY="160.0" prefHeight="45.0" prefWidth="210.0">
+      <JFXTextField fx:id="txtCustomerId" layoutX="506.0" layoutY="160.0" prefHeight="45.0" prefWidth="210.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtSupplierName" layoutX="506.0" layoutY="205.0" prefHeight="45.0" prefWidth="210.0">
+      <JFXTextField fx:id="txtCustomerName" layoutX="506.0" layoutY="205.0" prefHeight="45.0" prefWidth="210.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtSupplierEmail" layoutX="506.0" layoutY="252.0" prefHeight="45.0" prefWidth="210.0">
+      <JFXTextField fx:id="txtCustomerEmail" layoutX="506.0" layoutY="252.0" prefHeight="45.0" prefWidth="210.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -55,7 +55,7 @@
       </JFXTextField>
       <ImageView fitHeight="123.0" fitWidth="123.0" layoutX="445.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/supplier%20(1).png" />
+            <Image url="@../images/service.png" />
          </image>
       </ImageView>
       <JFXButton fx:id="btnUpdate" layoutX="751.0" layoutY="172.0" prefHeight="45.0" prefWidth="88.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="Update" textFill="#fcfcfc">
@@ -82,7 +82,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnRegisterSupplier" layoutX="751.0" layoutY="40.0" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register Supplier" textFill="WHITE">
+      <JFXButton fx:id="btnRegisterCustomer" layoutX="751.0" layoutY="40.0" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register Customer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -90,11 +90,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblSupplier" blendMode="EXCLUSION" layoutX="26.0" layoutY="357.0" prefHeight="279.0" prefWidth="948.0">
+      <TableView fx:id="tblCustomer" blendMode="EXCLUSION" layoutX="26.0" layoutY="357.0" prefHeight="279.0" prefWidth="948.0">
          <columns>
-            <TableColumn fx:id="colSupplierId" prefWidth="153.0" text="Supplier Id" />
-            <TableColumn fx:id="colSupplierName" prefWidth="302.0" text="Supplier Name" />
-            <TableColumn fx:id="colSupplierEmail" prefWidth="301.0" text="E-mail" />
+            <TableColumn fx:id="colCustomerId" prefWidth="153.0" text="Customer Id" />
+            <TableColumn fx:id="colCustomerName" prefWidth="302.0" text="Customer Name" />
+            <TableColumn fx:id="colCustomerEmail" prefWidth="301.0" text="E-mail" />
             <TableColumn fx:id="colContactNumber" prefWidth="190.0" text="Contact Number" />
          </columns>
       </TableView>
