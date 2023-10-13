@@ -57,6 +57,14 @@ public class LoginFormController {
     }
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        loginFormServiceImpl.clear(txtUserName,txtPassword);
+    }
+    @FXML
+    void btnAdminOnAction(ActionEvent event) {
+        loginFormServiceImpl.btnAdminStyle(btnAdmin,btnEmployee);
+    }
+    @FXML
+    void btnEmployeeOnAction(ActionEvent event) {
+        loginFormServiceImpl.btnEmployeeStyle(btnAdmin,btnEmployee);
     }
 }

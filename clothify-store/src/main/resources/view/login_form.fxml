@@ -51,7 +51,7 @@
             </Label>
             <AnchorPane layoutX="323.0" layoutY="31.0" prefHeight="485.0" prefWidth="447.0" style="-fx-background-color: gray; -fx-background-radius: 20;">
                <children>
-                  <JFXButton fx:id="btnAdmin" layoutX="103.0" layoutY="108.0" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: white;" text="Admin">
+                  <JFXButton fx:id="btnAdmin" layoutX="107.0" layoutY="131.0" onAction="#btnAdminOnAction" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: black;" text="Admin" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="btnEmployee" layoutX="220.0" layoutY="108.0" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: black;" text="Employee" textFill="WHITE">
+                  <JFXButton fx:id="btnEmployee" layoutX="221.0" layoutY="131.0" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: black;" text="Employee" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -129,6 +129,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
+                  <Label alignment="CENTER" layoutX="126.0" layoutY="92.0" prefHeight="21.0" prefWidth="190.0" text="Select user type" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
@@ -137,6 +142,9 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
    </children>
 </AnchorPane>

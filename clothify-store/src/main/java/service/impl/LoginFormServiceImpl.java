@@ -1,5 +1,9 @@
 package service.impl;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -19,7 +23,7 @@ public class LoginFormServiceImpl implements LoginFormService {
         }
     }
 
-    public void login(javafx.event.ActionEvent event) {
+    public void login(ActionEvent event) {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin_dashboard_form.fxml"))));
@@ -29,7 +33,7 @@ public class LoginFormServiceImpl implements LoginFormService {
         }
     }
 
-    public void signIn(javafx.event.ActionEvent event) {
+    public void signIn(ActionEvent event) {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/user_registration_form.fxml"))));
@@ -39,7 +43,7 @@ public class LoginFormServiceImpl implements LoginFormService {
         }
     }
 
-    public void forgotPassword(javafx.event.ActionEvent event) {
+    public void forgotPassword(ActionEvent event) {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/forgot_password_form.fxml"))));
@@ -47,5 +51,17 @@ public class LoginFormServiceImpl implements LoginFormService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void btnAdminStyle(JFXButton btnAdmin, JFXButton btnEmployee){
+        btnAdmin.setStyle("-fx-background-color: #2d3436");
+        btnEmployee.setStyle("-fx-background-color: #636e72");
+    }
+    public void btnEmployeeStyle(JFXButton btnAdmin, JFXButton btnEmployee){
+        btnAdmin.setStyle("-fx-background-color: #636e72");
+        btnEmployee.setStyle("-fx-background-color: #2d3436");
+    }
+    public void clear(JFXTextField txtUserName, JFXPasswordField txtPassword){
+        txtUserName.setText("");
+        txtPassword.setText("");
     }
 }
