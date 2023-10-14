@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeDto {
+public class ProductDto {
 
-    String empId;
-    String empName;
-    String email;
-    String contactNumber;
-
+    String prodId;
+    String name;
+    int unitPrice;
+    int qtyOnHand;
+    String type;
 }

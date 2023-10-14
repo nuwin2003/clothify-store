@@ -17,19 +17,25 @@ import java.util.Optional;
 
 public class LoginFormServiceImpl implements LoginFormService {
     public void exit(){
-        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to exit ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you really want to Exit ?",ButtonType.YES,ButtonType.NO).showAndWait();
         if(buttonType.get() == ButtonType.YES){
             System.exit(0);
         }
     }
 
-    public void login(ActionEvent event) {
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin_dashboard_form.fxml"))));
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    public void login(ActionEvent event, JFXTextField txtUserName, JFXPasswordField txtPassword){
+        String userName = txtUserName.getText();
+        String password = txtPassword.getText();
+        if(userName.equalsIgnoreCase("Nuwin") && password.equals("47212")){
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin_dashboard_form.fxml"))));
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else{
+            Optional<ButtonType> buttonType = new Alert(Alert.AlertType.ERROR,"Login Error!",ButtonType.OK).showAndWait();
         }
     }
 

@@ -45,7 +45,7 @@ public class LoginFormController {
     }
     @FXML
     void btnLoginOnAction(ActionEvent event) {
-        loginFormServiceImpl.login(event);
+        loginFormServiceImpl.login(event,txtUserName,txtPassword);
     }
     @FXML
     void btnSignInOnAction(ActionEvent event) {
