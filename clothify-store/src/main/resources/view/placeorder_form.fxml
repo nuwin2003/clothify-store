@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane opacity="0.75" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane opacity="0.75" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
    <children>
       <Label layoutX="26.0" layoutY="23.0" prefHeight="45.0" prefWidth="120.0" text="Order Id :" textFill="#c3c3c3">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnRemove" alignment="CENTER_RIGHT" layoutX="835.0" layoutY="202.0" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Remove" textFill="WHITE">
+      <JFXButton fx:id="btnRemove" alignment="CENTER_RIGHT" layoutX="835.0" layoutY="202.0" onAction="#btnRemoveOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Remove" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -27,7 +27,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnRegisterCustomer" layoutX="825.0" layoutY="74.0" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register " textFill="WHITE">
+      <JFXButton fx:id="btnRegisterCustomer" layoutX="825.0" layoutY="74.0" onAction="#btnRegisterCustomerOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Register " textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -87,7 +87,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnAddToCart" alignment="CENTER_RIGHT" layoutX="647.0" layoutY="202.0" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Add to cart" textFill="WHITE">
+      <JFXButton fx:id="btnAddToCart" alignment="CENTER_RIGHT" layoutX="647.0" layoutY="202.0" onAction="#btnAddToCartOnAction" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Add to cart" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -139,7 +139,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnPlaceOrder" alignment="CENTER_RIGHT" layoutX="798.0" layoutY="621.0" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Place Order" textFill="WHITE">
+      <JFXButton fx:id="btnPlaceOrder" alignment="CENTER_RIGHT" layoutX="798.0" layoutY="621.0" onAction="#btnPlaceOrderOnAction" prefHeight="45.0" prefWidth="165.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Place Order" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

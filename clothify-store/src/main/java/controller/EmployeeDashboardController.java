@@ -1,21 +1,20 @@
 package controller;
 
-
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import service.impl.AdminDashboardService;
+import service.impl.EmployeeDashboardService;
 
 import java.io.IOException;
 
-public class AdminDashboardController {
+public class EmployeeDashboardController {
     @FXML
     private JFXButton btnExit;
 
     @FXML
-    private JFXButton btnEmployees;
+    private JFXButton btnDashboard;
 
     @FXML
     private JFXButton btnProducts;
@@ -30,10 +29,7 @@ public class AdminDashboardController {
     private JFXButton btnCustomers;
 
     @FXML
-    private JFXButton btnReports;
-
-    @FXML
-    private JFXButton btnDashboard;
+    private AnchorPane bodyAnchor;
 
     @FXML
     private Label lblTime;
@@ -41,51 +37,37 @@ public class AdminDashboardController {
     @FXML
     private Label lblDate;
 
-    @FXML
-    private AnchorPane bodyAnchor;
-
-    AdminDashboardService adminDashboardService = new AdminDashboardService();
+    EmployeeDashboardService employeeDashboardService = new EmployeeDashboardService();
 
     public void initialize(){
-        adminDashboardService.setDateAndTime(lblDate,lblTime);
+        employeeDashboardService.setDateAndTime(lblDate,lblTime);
     }
     @FXML
     void btnCustomersOnAction(ActionEvent event) throws IOException {
-        adminDashboardService.showCustomerForm(bodyAnchor);
+        employeeDashboardService.showCustomerForm(bodyAnchor);
     }
 
     @FXML
     void btnDashboardOnAction(ActionEvent event) {
-        adminDashboardService.showDashboard(event);
-    }
-
-    @FXML
-    void btnEmployeesOnAction(ActionEvent event) throws IOException {
-        adminDashboardService.showEmployeeForm(bodyAnchor);
-    }
-
-    @FXML
-    void btnPlaceOrderOnAction(ActionEvent event) throws IOException {
-        adminDashboardService.showPlaceOrderForm(bodyAnchor);
-    }
-
-    @FXML
-    void btnProductsOnAction(ActionEvent event) throws IOException {
-        adminDashboardService.showProductsForm(bodyAnchor);
-    }
-
-    @FXML
-    void btnReportsOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnSuppliersOnAction(ActionEvent event) throws IOException {
-        adminDashboardService.showSupplierForm(bodyAnchor);
+        employeeDashboardService.showDashboard(event);
     }
 
     @FXML
     void btnExitOnAction(ActionEvent event) {
-        adminDashboardService.exit();
+        employeeDashboardService.exit();
+    }
+
+    @FXML
+    void btnPlaceOrderOnAction(ActionEvent event) throws IOException {
+        employeeDashboardService.showPlaceOrderForm(bodyAnchor);
+    }
+
+    @FXML
+    void btnProductsOnAction(ActionEvent event) throws IOException {
+        employeeDashboardService.showProductsForm(bodyAnchor);
+    }
+    @FXML
+    void btnSuppliersOnAction(ActionEvent event) throws IOException {
+        employeeDashboardService.showSupplierForm(bodyAnchor);
     }
 }

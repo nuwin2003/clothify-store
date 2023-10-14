@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class AdminSupplierController {
+public class SupplierController {
     @FXML
     private JFXTextField txtSupplierId;
 

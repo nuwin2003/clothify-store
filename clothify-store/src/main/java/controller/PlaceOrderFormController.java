@@ -3,12 +3,15 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
+import service.impl.PlaceOrderService;
 
-public class AdminPlaceOrderFormController {
+public class PlaceOrderFormController {
     @FXML
     private JFXButton btnRemove;
 
@@ -65,4 +68,25 @@ public class AdminPlaceOrderFormController {
 
     @FXML
     private Label lblItemName;
+
+    PlaceOrderService placeOrderService = new PlaceOrderService();
+    @FXML
+    void btnAddToCartOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnPlaceOrderOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnRegisterCustomerOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnRemoveOnAction(ActionEvent event) {
+
+    }
 }
