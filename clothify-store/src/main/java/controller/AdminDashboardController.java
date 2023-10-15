@@ -42,6 +42,9 @@ public class AdminDashboardController {
     private Label lblDate;
 
     @FXML
+    private JFXButton btnLogOut;
+
+    @FXML
     private AnchorPane bodyAnchor;
 
     AdminDashboardService adminDashboardService = new AdminDashboardService();
@@ -82,6 +85,11 @@ public class AdminDashboardController {
     @FXML
     void btnSuppliersOnAction(ActionEvent event) throws IOException {
         adminDashboardService.showSupplierForm(bodyAnchor);
+    }
+
+    @FXML
+    void btnLogOutOnAction(ActionEvent event) {
+        adminDashboardService.logOut(event);
     }
 
     @FXML

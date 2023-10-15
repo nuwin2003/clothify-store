@@ -37,6 +37,9 @@ public class EmployeeDashboardController {
     @FXML
     private Label lblDate;
 
+    @FXML
+    private JFXButton btnLogOut;
+
     EmployeeDashboardService employeeDashboardService = new EmployeeDashboardService();
 
     public void initialize(){
@@ -69,5 +72,9 @@ public class EmployeeDashboardController {
     @FXML
     void btnSuppliersOnAction(ActionEvent event) throws IOException {
         employeeDashboardService.showSupplierForm(bodyAnchor);
+    }
+    @FXML
+    void btnLogOutOnAction(ActionEvent event) {
+        employeeDashboardService.logOut(event);
     }
 }

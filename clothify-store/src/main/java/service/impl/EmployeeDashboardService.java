@@ -101,4 +101,17 @@ public class EmployeeDashboardService {
         LocalDate localDate = LocalDate.now();
         lblDate.setText(localDate.toString());
     }
+
+    public void logOut(ActionEvent event) {
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Log out ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/login_form.fxml"))));
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 }

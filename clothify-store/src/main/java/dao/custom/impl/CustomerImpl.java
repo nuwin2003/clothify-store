@@ -2,13 +2,29 @@ package dao.custom.impl;
 
 import dao.custom.CustomerDao;
 import dto.CustomerDto;
+import entity.CustomerEntity;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
 public class CustomerImpl implements CustomerDao {
     @Override
     public boolean save(CustomerDto dto) {
-        return false;
+        CustomerEntity customer = new CustomerEntity(
+                dto.getCustomerId(),
+                dto.getName(),
+                dto.getEmail(),
+                dto.getContactNumber()
+        );
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(CustomerEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.save(customer);
+        return true;
     }
 
     @Override
