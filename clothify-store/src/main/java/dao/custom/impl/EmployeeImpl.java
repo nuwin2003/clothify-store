@@ -2,13 +2,30 @@ package dao.custom.impl;
 
 import dao.custom.EmployeeDao;
 import dto.EmployeeDto;
+import entity.CustomerEntity;
+import entity.EmployeeEntity;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
 public class EmployeeImpl implements EmployeeDao {
     @Override
     public boolean save(EmployeeDto dto) {
-        return false;
+        EmployeeEntity employee = new EmployeeEntity(
+                dto.getEmpId(),
+                dto.getEmpName(),
+                dto.getEmail(),
+                dto.getContactNumber()
+        );
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(CustomerEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.save(employee);
+        return true;
     }
 
     @Override
