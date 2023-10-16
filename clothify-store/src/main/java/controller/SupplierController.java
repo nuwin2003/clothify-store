@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import service.impl.SupplierService;
 
 public class SupplierController {
@@ -74,5 +75,10 @@ public class SupplierController {
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
+    }
+
+    @FXML
+    void tblSupplierOnClick(MouseEvent event) {
+        supplierService.loadSupplierDetails(tblSupplier,txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
     }
 }

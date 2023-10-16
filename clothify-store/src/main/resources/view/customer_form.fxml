@@ -90,7 +90,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblCustomer" blendMode="EXCLUSION" layoutX="26.0" layoutY="357.0" prefHeight="279.0" prefWidth="948.0">
+      <TableView fx:id="tblCustomer" blendMode="EXCLUSION" layoutX="26.0" layoutY="357.0" onMouseClicked="#tblCustomerOnClick" prefHeight="279.0" prefWidth="948.0">
          <columns>
             <TableColumn fx:id="colCustomerId" prefWidth="153.0" text="Customer Id" />
             <TableColumn fx:id="colCustomerName" prefWidth="302.0" text="Customer Name" />

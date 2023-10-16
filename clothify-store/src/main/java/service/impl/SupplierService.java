@@ -3,6 +3,7 @@ package service.impl;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.SupplierImpl;
 import dto.SupplierDto;
+import entity.SupplierEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -43,5 +44,16 @@ public class SupplierService {
 
         tblSupplier.setItems(list);
 
+    }
+
+    public void loadSupplierDetails(TableView<?> tblSupplier, JFXTextField txtSupplierId, JFXTextField txtSupplierName, JFXTextField txtSupplierEmail, JFXTextField txtContactNumber) {
+        if(!tblSupplier.getSelectionModel().isEmpty()){
+            SupplierEntity selectedRow = (SupplierEntity) tblSupplier.getSelectionModel().getSelectedItem();
+
+            txtSupplierId.setText(String.valueOf(selectedRow.getSupId()));
+            txtSupplierName.setText(selectedRow.getName());
+            txtSupplierEmail.setText(selectedRow.getEmail());
+            txtContactNumber.setText(selectedRow.getContactNumber());
+        }
     }
 }

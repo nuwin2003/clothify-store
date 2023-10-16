@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.ProductImpl;
 import dto.ProductDto;
+import entity.ProductEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -52,5 +53,17 @@ public class ProductService {
     public void setItems(JFXComboBox<String> cmbType) {
         ObservableList<String> observableList = FXCollections.observableArrayList("Gents","Ladies","Kids");
         cmbType.setItems(observableList);
+    }
+
+    public void loadProductDetails(TableView<?> tblProduct, JFXTextField txtProductId, JFXTextField txtProductName, JFXTextField txtUnitPrice, JFXTextField txtQtyOnHand, JFXComboBox<String> cmbType) {
+        if(!tblProduct.getSelectionModel().isEmpty()){
+            ProductEntity selectedRow = (ProductEntity) tblProduct.getSelectionModel().getSelectedItem();
+
+            txtProductId.setText(String.valueOf(selectedRow.getProdId()));
+            txtProductName.setText(selectedRow.getName());
+            txtUnitPrice.setText(String.valueOf(selectedRow.getUnitPrice()));
+            txtQtyOnHand.setText(String.valueOf(selectedRow.getQtyOnHand()));
+            cmbType.setValue(selectedRow.getType());
+        }
     }
 }

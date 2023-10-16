@@ -3,6 +3,7 @@ package service.impl;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.CustomerImpl;
 import dto.CustomerDto;
+import entity.CustomerEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -44,5 +45,20 @@ public class CustomerService {
 
         ObservableList<CustomerDto> list = FXCollections.observableArrayList(customer.findAll());
         tblCustomer.setItems(list);
+    }
+
+    public void setId(JFXTextField txtCustomerId) {
+        txtCustomerId.setText(customer.findLastId());
+    }
+
+    public void loadCustomerDetails(TableView<?> tblCustomer, JFXTextField txtCustomerId, JFXTextField txtCustomerName, JFXTextField txtCustomerEmail, JFXTextField txtContactNumber) {
+        if(!tblCustomer.getSelectionModel().isEmpty()){
+            CustomerEntity selectedRow = (CustomerEntity) tblCustomer.getSelectionModel().getSelectedItem();
+
+            txtCustomerId.setText(String.valueOf(selectedRow.getCustomerId()));
+            txtCustomerName.setText(selectedRow.getName());
+            txtCustomerEmail.setText(selectedRow.getEmail());
+            txtContactNumber.setText(selectedRow.getContactNumber());
+        }
     }
 }

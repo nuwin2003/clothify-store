@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import service.impl.ProductService;
 
 public class ProductController {
@@ -84,5 +85,10 @@ public class ProductController {
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
+    }
+
+    @FXML
+    void tblProductOnClick(MouseEvent event) {
+        productService.loadProductDetails(tblProduct,txtProductId,txtProductName,txtUnitPrice,txtQtyOnHand,cmbType);
     }
 }

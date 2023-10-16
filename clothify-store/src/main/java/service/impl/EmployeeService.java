@@ -3,6 +3,7 @@ package service.impl;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.EmployeeImpl;
 import dto.EmployeeDto;
+import entity.EmployeeEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -41,5 +42,16 @@ public class EmployeeService {
         ObservableList<EmployeeDto> list = FXCollections.observableArrayList(employee.findAll());
 
         tblEmployee.setItems(list);
+    }
+
+    public void loadEmployeeDetails(TableView<?> tblEmployee, JFXTextField txtEmployeeId, JFXTextField txtEmployeeName, JFXTextField txtEmployeeEmail, JFXTextField txtContactNumber) {
+        if(!tblEmployee.getSelectionModel().isEmpty()){
+            EmployeeEntity selectedRow = (EmployeeEntity) tblEmployee.getSelectionModel().getSelectedItem();
+
+            txtEmployeeId.setText(String.valueOf(selectedRow.getEmpId()));
+            txtEmployeeName.setText(selectedRow.getEmpName());
+            txtEmployeeEmail.setText(selectedRow.getEmail());
+            txtContactNumber.setText(selectedRow.getContactNumber());
+        }
     }
 }

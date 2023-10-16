@@ -3,10 +3,12 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import dto.CustomerDto;
+import entity.CustomerEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import service.impl.CustomerService;
 
 public class CustomerController {
@@ -53,6 +55,7 @@ public class CustomerController {
 
     public void initialize(){
         customerService.loadTable(tblCustomer,colCustomerId,colCustomerName,colCustomerEmail,colContactNumber);
+        customerService.setId(txtCustomerId);
     }
     @FXML
     void btnClearOnAction(ActionEvent event) {
@@ -74,5 +77,10 @@ public class CustomerController {
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
+    }
+
+    @FXML
+    void tblCustomerOnClick(MouseEvent event) {
+        customerService.loadCustomerDetails(tblCustomer,txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
     }
 }

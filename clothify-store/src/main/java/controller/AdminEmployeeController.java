@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import service.impl.EmployeeService;
 
 public class AdminEmployeeController {
@@ -76,4 +77,8 @@ public class AdminEmployeeController {
 
     }
 
+    @FXML
+    void tblEmployeeOnClick(MouseEvent event) {
+        employeeService.loadEmployeeDetails(tblEmployee,txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+    }
 }
