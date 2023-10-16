@@ -4,12 +4,17 @@ import dao.custom.CustomerDao;
 import db.DBConnection;
 import dto.CustomerDto;
 import entity.CustomerEntity;
+import entity.EmployeeEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 import java.sql.*;
 import java.util.List;
@@ -17,28 +22,24 @@ import java.util.List;
 public class CustomerImpl implements CustomerDao {
     @Override
     public boolean save(CustomerDto dto) {
-        boolean isSaved = false;
         CustomerEntity customer = new CustomerEntity(
                 dto.getCustomerId(),
                 dto.getName(),
                 dto.getEmail(),
                 dto.getContactNumber()
         );
-        try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("Insert into customer Values(?,?,?,?)");
-            preparedStatement.setObject(1,customer.getCustomerId());
-            preparedStatement.setObject(2,customer.getName());
-            preparedStatement.setObject(3,customer.getEmail());
-            preparedStatement.setObject(4,customer.getContactNumber());
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(CustomerEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(customer);
+        transaction.commit();
 
-            if(preparedStatement.executeUpdate() > 0){
-                isSaved =  true;
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-        }
-        return isSaved;
+        session.close();
+        sessionFactory.close();
+        return true;
     }
 
     @Override

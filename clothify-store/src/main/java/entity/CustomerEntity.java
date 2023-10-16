@@ -1,15 +1,13 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")
-
 public class CustomerEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     String customerId;
     String name;
     String email;

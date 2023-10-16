@@ -2,10 +2,10 @@ package dao.custom.impl;
 
 import dao.custom.EmployeeDao;
 import dto.EmployeeDto;
-import entity.CustomerEntity;
 import entity.EmployeeEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.util.List;
@@ -21,10 +21,15 @@ public class EmployeeImpl implements EmployeeDao {
         );
         Configuration configuration = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(CustomerEntity.class);
+                .addAnnotatedClass(EmployeeEntity.class);
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         session.save(employee);
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
         return true;
     }
 

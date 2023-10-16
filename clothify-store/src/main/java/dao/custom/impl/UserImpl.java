@@ -2,13 +2,35 @@ package dao.custom.impl;
 
 import dao.custom.UserDao;
 import dto.UserDto;
+import entity.UserEntity;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
 public class UserImpl implements UserDao {
     @Override
     public boolean save(UserDto dto) {
-        return false;
+        UserEntity user = new UserEntity(
+                dto.getUserId(),
+                dto.getUserName(),
+                dto.getPassword(),
+                dto.getType()
+        );
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(UserEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(user);
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+        return true;
     }
 
     @Override

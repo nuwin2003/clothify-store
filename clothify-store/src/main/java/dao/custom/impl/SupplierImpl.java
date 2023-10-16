@@ -2,10 +2,10 @@ package dao.custom.impl;
 
 import dao.custom.SupplierDao;
 import dto.SupplierDto;
-import entity.CustomerEntity;
 import entity.SupplierEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.util.List;
@@ -21,10 +21,15 @@ public class SupplierImpl implements SupplierDao {
         );
         Configuration configuration = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(CustomerEntity.class);
+                .addAnnotatedClass(SupplierEntity.class);
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         session.save(supplier);
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
         return true;
     }
 

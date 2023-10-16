@@ -11,7 +11,7 @@ public class ProductDto {
 
     String prodId;
     String name;
-    int unitPrice;
+    double unitPrice;
     int qtyOnHand;
     String type;
 }
