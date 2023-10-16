@@ -1,12 +1,15 @@
 package dao.custom.impl;
 
 import dao.custom.SupplierDao;
+import dto.CustomerDto;
 import dto.SupplierDto;
+import entity.CustomerEntity;
 import entity.SupplierEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -45,7 +48,16 @@ public class SupplierImpl implements SupplierDao {
 
     @Override
     public List<SupplierDto> findAll() {
-        return null;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(SupplierEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        Query query = session.createQuery("FROM SupplierEntity");
+        List<SupplierDto> list = query.list();
+
+        return list;
     }
 
     @Override

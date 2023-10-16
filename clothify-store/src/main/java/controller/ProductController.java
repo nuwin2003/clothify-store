@@ -66,7 +66,7 @@ public class ProductController {
     }
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        productService.clear(txtProductId,txtProductName,txtQtyOnHand,txtUnitPrice,cmbType);
     }
 
     @FXML

@@ -2,6 +2,7 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import dto.EmployeeDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -34,7 +35,7 @@ public class AdminEmployeeController {
     private JFXButton btnRegisterEmployee;
 
     @FXML
-    private TableView<?> tblEmployee;
+    private TableView<EmployeeDto> tblEmployee;
 
     @FXML
     private TableColumn<?, ?> colEmpId;
@@ -49,9 +50,13 @@ public class AdminEmployeeController {
     private TableColumn<?, ?> colContactNumber;
 
     EmployeeService employeeService = new EmployeeService();
+
+    public void initialize(){
+        employeeService.loadTable(tblEmployee,colEmpId,colEmpName,colEmpEmail,colContactNumber);
+    }
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        employeeService.clear(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
     }
 
     @FXML
@@ -62,6 +67,7 @@ public class AdminEmployeeController {
     @FXML
     void btnRegisterEmployeeOnAction(ActionEvent event) {
         employeeService.save(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+        employeeService.loadTable(tblEmployee,colEmpId,colEmpName,colEmpEmail,colContactNumber);
         employeeService.clear(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
     }
 

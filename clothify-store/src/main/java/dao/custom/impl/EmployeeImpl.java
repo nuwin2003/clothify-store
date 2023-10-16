@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -45,7 +46,16 @@ public class EmployeeImpl implements EmployeeDao {
 
     @Override
     public List<EmployeeDto> findAll() {
-        return null;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(EmployeeEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        Query query = session.createQuery("FROM EmployeeEntity");
+        List<EmployeeDto> list = query.list();
+
+        return list;
     }
 
     @Override

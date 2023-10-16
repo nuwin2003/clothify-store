@@ -3,7 +3,12 @@ package service.impl;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.EmployeeImpl;
 import dto.EmployeeDto;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class EmployeeService {
 
@@ -25,5 +30,16 @@ public class EmployeeService {
         txtEmployeeName.setText("");
         txtEmployeeEmail.setText("");
         txtContactNumber.setText("");
+    }
+
+    public void loadTable(TableView<EmployeeDto> tblEmployee, TableColumn<?,?> colEmpId, TableColumn<?,?> colEmpName, TableColumn<?,?> colEmpEmail, TableColumn<?,?> colContactNumber) {
+        colEmpId.setCellValueFactory(new PropertyValueFactory<>("empId"));
+        colEmpName.setCellValueFactory(new PropertyValueFactory<>("empName"));
+        colEmpEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
+
+        ObservableList<EmployeeDto> list = FXCollections.observableArrayList(employee.findAll());
+
+        tblEmployee.setItems(list);
     }
 }

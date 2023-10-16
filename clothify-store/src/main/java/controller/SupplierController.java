@@ -2,6 +2,7 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import dto.SupplierDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -34,7 +35,7 @@ public class SupplierController {
     private JFXButton btnRegisterSupplier;
 
     @FXML
-    private TableView<?> tblSupplier;
+    private TableView<SupplierDto> tblSupplier;
 
     @FXML
     private TableColumn<?, ?> colSupplierId;
@@ -49,6 +50,10 @@ public class SupplierController {
     private TableColumn<?, ?> colContactNumber;
 
     SupplierService supplierService = new SupplierService();
+
+    public void initialize(){
+        supplierService.loadTable(tblSupplier,colSupplierId,colSupplierName,colSupplierEmail,colContactNumber);
+    }
     @FXML
     void btnClearOnAction(ActionEvent event) {
 
@@ -62,6 +67,7 @@ public class SupplierController {
     @FXML
     void btnRegisterSupplierOnAction(ActionEvent event) {
         supplierService.registerSupplier(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
+        supplierService.loadTable(tblSupplier,colSupplierId,colSupplierName,colSupplierEmail,colContactNumber);
         supplierService.clear(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
     }
 
