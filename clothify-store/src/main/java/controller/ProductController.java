@@ -8,10 +8,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import service.impl.ProductService;
+
+import java.util.Optional;
 
 public class ProductController {
     @FXML
@@ -72,14 +76,22 @@ public class ProductController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Delete this Product ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES) {
+            productService.delete(txtProductId);
+            productService.loadTable(tblProduct, colProductId, colProductName, colUnitPrice, colQtyOnHand, colType);
+            productService.clear(txtProductId, txtProductName, txtQtyOnHand, txtUnitPrice, cmbType);
+        }
     }
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
-        productService.registerProduct(txtProductId,txtProductName,txtQtyOnHand,txtUnitPrice,cmbType);
-        productService.loadTable(tblProduct,colProductId,colProductName,colUnitPrice,colQtyOnHand,colType);
-        productService.clear(txtProductId,txtProductName,txtQtyOnHand,txtUnitPrice,cmbType);
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Register this Product ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES) {
+            productService.registerProduct(txtProductId, txtProductName, txtQtyOnHand, txtUnitPrice, cmbType);
+            productService.loadTable(tblProduct, colProductId, colProductName, colUnitPrice, colQtyOnHand, colType);
+            productService.clear(txtProductId, txtProductName, txtQtyOnHand, txtUnitPrice, cmbType);
+        }
     }
 
     @FXML

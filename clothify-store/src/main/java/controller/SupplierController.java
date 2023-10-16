@@ -5,10 +5,14 @@ import com.jfoenix.controls.JFXTextField;
 import dto.SupplierDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import service.impl.SupplierService;
+
+import java.util.Optional;
 
 public class SupplierController {
     @FXML
@@ -57,19 +61,27 @@ public class SupplierController {
     }
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        supplierService.clear(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Delete this Supplier ?", ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            supplierService.delete(txtSupplierId);
+            supplierService.loadTable(tblSupplier,colSupplierId,colSupplierName,colSupplierEmail,colContactNumber);
+            supplierService.clear(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
+        }
     }
 
     @FXML
     void btnRegisterSupplierOnAction(ActionEvent event) {
-        supplierService.registerSupplier(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
-        supplierService.loadTable(tblSupplier,colSupplierId,colSupplierName,colSupplierEmail,colContactNumber);
-        supplierService.clear(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Register this Supplier ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            supplierService.registerSupplier(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
+            supplierService.loadTable(tblSupplier,colSupplierId,colSupplierName,colSupplierEmail,colContactNumber);
+            supplierService.clear(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
+        }
     }
 
     @FXML

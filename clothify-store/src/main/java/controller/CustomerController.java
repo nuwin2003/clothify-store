@@ -3,13 +3,16 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import dto.CustomerDto;
-import entity.CustomerEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import service.impl.CustomerService;
+
+import java.util.Optional;
 
 public class CustomerController {
     @FXML
@@ -64,14 +67,22 @@ public class CustomerController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Delete this Customer ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            customerService.delete(txtCustomerId);
+            customerService.loadTable(tblCustomer,colCustomerId,colCustomerName,colCustomerEmail,colContactNumber);
+            customerService.clear(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
+        }
     }
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
-        customerService.registerCustomer(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
-        customerService.loadTable(tblCustomer,colCustomerId,colCustomerName,colCustomerEmail,colContactNumber);
-        customerService.clear(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Register this Customer ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            customerService.registerCustomer(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
+            customerService.loadTable(tblCustomer,colCustomerId,colCustomerName,colCustomerEmail,colContactNumber);
+            customerService.clear(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
+        }
     }
 
     @FXML

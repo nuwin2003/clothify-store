@@ -43,7 +43,19 @@ public class SupplierImpl implements SupplierDao {
 
     @Override
     public boolean delete(String s) {
-        return false;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(SupplierEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(session.find(SupplierEntity.class,Integer.parseInt(s)));
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+
+        return true;
     }
 
     @Override

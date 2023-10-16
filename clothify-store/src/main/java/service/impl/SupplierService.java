@@ -22,7 +22,7 @@ public class SupplierService {
                 txtContactNumber.getText()
         );
         if(supplier.save(supplierDto)){
-            new Alert(Alert.AlertType.INFORMATION,"Supplier Saved!").show();
+            new Alert(Alert.AlertType.INFORMATION,"Supplier Registered!").show();
         }
     }
 
@@ -54,6 +54,13 @@ public class SupplierService {
             txtSupplierName.setText(selectedRow.getName());
             txtSupplierEmail.setText(selectedRow.getEmail());
             txtContactNumber.setText(selectedRow.getContactNumber());
+        }
+    }
+
+    public void delete(JFXTextField txtSupplierId) {
+        String id = txtSupplierId.getText();
+        if(supplier.delete(id)){
+            new Alert(Alert.AlertType.INFORMATION,"Supplier Deleted!").show();
         }
     }
 }

@@ -5,10 +5,14 @@ import com.jfoenix.controls.JFXTextField;
 import dto.EmployeeDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import service.impl.EmployeeService;
+
+import java.util.Optional;
 
 public class AdminEmployeeController {
     @FXML
@@ -62,14 +66,22 @@ public class AdminEmployeeController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Delete this Employee ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            employeeService.delete(txtEmployeeId);
+            employeeService.loadTable(tblEmployee,colEmpId,colEmpName,colEmpEmail,colContactNumber);
+            employeeService.clear(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+        }
     }
 
     @FXML
     void btnRegisterEmployeeOnAction(ActionEvent event) {
-        employeeService.save(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
-        employeeService.loadTable(tblEmployee,colEmpId,colEmpName,colEmpEmail,colContactNumber);
-        employeeService.clear(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Register this Employee ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            employeeService.save(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+            employeeService.loadTable(tblEmployee,colEmpId,colEmpName,colEmpEmail,colContactNumber);
+            employeeService.clear(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+        }
     }
 
     @FXML

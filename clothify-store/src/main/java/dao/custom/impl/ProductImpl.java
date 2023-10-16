@@ -42,7 +42,18 @@ public class ProductImpl implements ProductDao {
 
     @Override
     public boolean delete(String s) {
-        return false;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(ProductEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(session.find(ProductEntity.class,Integer.parseInt(s)));
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+        return true;
     }
 
     @Override

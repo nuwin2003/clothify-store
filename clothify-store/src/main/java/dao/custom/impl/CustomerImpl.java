@@ -9,7 +9,6 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-import java.math.BigInteger;
 import java.util.List;
 
 public class CustomerImpl implements CustomerDao {
@@ -36,13 +35,22 @@ public class CustomerImpl implements CustomerDao {
     }
 
     @Override
-    public boolean update(CustomerDto dto) {
-        return false;
-    }
+    public boolean update(CustomerDto dto) {return false;}
 
     @Override
     public boolean delete(String s) {
-        return false;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(CustomerEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(session.find(CustomerEntity.class,Integer.parseInt(s)));
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+        return true;
     }
 
     @Override
@@ -55,6 +63,8 @@ public class CustomerImpl implements CustomerDao {
 
         Query query = session.createQuery("FROM CustomerEntity");
         List<CustomerDto> list = query.list();
+        session.close();
+        sessionFactory.close();
 
         return list;
     }

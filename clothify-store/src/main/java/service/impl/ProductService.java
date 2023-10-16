@@ -26,7 +26,7 @@ public class ProductService {
                 (String) cmbType.getValue()
         );
         if (product.save(productDto)) {
-            new Alert(Alert.AlertType.INFORMATION, "Product Saved !").showAndWait();
+            new Alert(Alert.AlertType.INFORMATION, "Product Registered!").showAndWait();
         }
     }
 
@@ -64,6 +64,13 @@ public class ProductService {
             txtUnitPrice.setText(String.valueOf(selectedRow.getUnitPrice()));
             txtQtyOnHand.setText(String.valueOf(selectedRow.getQtyOnHand()));
             cmbType.setValue(selectedRow.getType());
+        }
+    }
+
+    public void delete(JFXTextField txtProductId) {
+        String id = txtProductId.getText();
+        if(product.delete(id)){
+            new Alert(Alert.AlertType.INFORMATION,"Product Deleted!").show();
         }
     }
 }

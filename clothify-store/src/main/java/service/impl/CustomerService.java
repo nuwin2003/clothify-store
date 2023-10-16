@@ -24,7 +24,7 @@ public class CustomerService {
         );
 
         if(customer.save(customerDto)){
-            new Alert(Alert.AlertType.INFORMATION,"Customer Saved!").show();
+            new Alert(Alert.AlertType.INFORMATION,"Customer Registered!").show();
         }
     }
 
@@ -59,6 +59,13 @@ public class CustomerService {
             txtCustomerName.setText(selectedRow.getName());
             txtCustomerEmail.setText(selectedRow.getEmail());
             txtContactNumber.setText(selectedRow.getContactNumber());
+        }
+    }
+
+    public void delete(JFXTextField txtCustomerId) {
+        String id = txtCustomerId.getText();
+        if(customer.delete(id)){
+            new Alert(Alert.AlertType.INFORMATION,"Customer Deleted!").show();
         }
     }
 }

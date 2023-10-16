@@ -22,7 +22,7 @@ public class EmployeeService {
                 txtContactNumber.getText()
         );
         if(employee.save(employeeDto)){
-            new Alert(Alert.AlertType.INFORMATION,"Employee Saved!").showAndWait();
+            new Alert(Alert.AlertType.INFORMATION,"Employee Registered!").showAndWait();
         }
     }
 
@@ -52,6 +52,13 @@ public class EmployeeService {
             txtEmployeeName.setText(selectedRow.getEmpName());
             txtEmployeeEmail.setText(selectedRow.getEmail());
             txtContactNumber.setText(selectedRow.getContactNumber());
+        }
+    }
+
+    public void delete(JFXTextField txtEmployeeId) {
+        String id = txtEmployeeId.getText();
+        if(employee.delete(id)){
+            new Alert(Alert.AlertType.INFORMATION,"Employee Deleted!").show();
         }
     }
 }
