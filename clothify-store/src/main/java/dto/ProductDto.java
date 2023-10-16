@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProductDto {
 
-    String prodId;
+    int prodId;
     String name;
     double unitPrice;
     int qtyOnHand;

@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class SupplierEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    String supId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int supId;
     String name;
     String email;
     String contactNumber;
@@ -16,18 +16,18 @@ public class SupplierEntity {
     public SupplierEntity() {
     }
 
-    public SupplierEntity(String supId, String name, String email, String contactNumber) {
+    public SupplierEntity(int supId, String name, String email, String contactNumber) {
         this.supId = supId;
         this.name = name;
         this.email = email;
         this.contactNumber = contactNumber;
     }
 
-    public String getSupId() {
+    public int getSupId() {
         return supId;
     }
 
-    public void setSupId(String supId) {
+    public void setSupId(int supId) {
         this.supId = supId;
     }
 

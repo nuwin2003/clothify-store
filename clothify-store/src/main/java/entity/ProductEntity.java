@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class ProductEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    String prodId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int prodId;
     String name;
     double unitPrice;
     int qtyOnHand;
@@ -17,7 +17,7 @@ public class ProductEntity {
     public ProductEntity() {
     }
 
-    public ProductEntity(String prodId, String name, double unitPrice, int qtyOnHand, String type) {
+    public ProductEntity(int prodId, String name, double unitPrice, int qtyOnHand, String type) {
         this.prodId = prodId;
         this.name = name;
         this.unitPrice = unitPrice;
@@ -25,11 +25,11 @@ public class ProductEntity {
         this.type = type;
     }
 
-    public String getProdId() {
+    public int getProdId() {
         return prodId;
     }
 
-    public void setProdId(String prodId) {
+    public void setProdId(int prodId) {
         this.prodId = prodId;
     }
 

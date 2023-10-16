@@ -35,7 +35,7 @@ public class CustomerController {
     private JFXButton btnRegisterCustomer;
 
     @FXML
-    private TableView<?> tblCustomer;
+    private TableView<CustomerDto> tblCustomer;
 
     @FXML
     private TableColumn<?, ?> colCustomerId;
@@ -68,6 +68,7 @@ public class CustomerController {
     void btnRegisterOnAction(ActionEvent event) {
         customerService.registerCustomer(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
         customerService.loadTable(tblCustomer,colCustomerId,colCustomerName,colCustomerEmail,colContactNumber);
+        customerService.clear(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
     }
 
     @FXML

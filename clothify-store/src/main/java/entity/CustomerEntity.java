@@ -7,13 +7,13 @@ import javax.persistence.*;
 public class CustomerEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    String customerId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int customerId;
     String name;
     String email;
     String contactNumber;
 
-    public CustomerEntity(String customerId, String name, String email, String contactNumber) {
+    public CustomerEntity(int customerId, String name, String email, String contactNumber) {
         this.customerId = customerId;
         this.name = name;
         this.email = email;
@@ -23,11 +23,11 @@ public class CustomerEntity {
     public CustomerEntity() {
     }
 
-    public String getCustomerId() {
+    public int getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 

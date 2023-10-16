@@ -3,6 +3,9 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import dto.ProductDto;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -32,7 +35,7 @@ public class ProductController {
     private JFXButton btnRegisterProduct;
 
     @FXML
-    private TableView<?> tblProduct;
+    private TableView<ProductDto> tblProduct;
 
     @FXML
     private TableColumn<?, ?> colProductId;
@@ -53,9 +56,14 @@ public class ProductController {
     private JFXTextField txtProductId;
 
     @FXML
-    private JFXComboBox<?> cmbType;
+    private JFXComboBox<String> cmbType;
 
     ProductService productService = new ProductService();
+
+    public void initialize(){
+        productService.setItems(cmbType);
+        productService.loadTable(tblProduct,colProductId,colProductName,colUnitPrice,colQtyOnHand,colType);
+    }
     @FXML
     void btnClearOnAction(ActionEvent event) {
 
@@ -69,6 +77,7 @@ public class ProductController {
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
         productService.registerProduct(txtProductId,txtProductName,txtQtyOnHand,txtUnitPrice,cmbType);
+        productService.loadTable(tblProduct,colProductId,colProductName,colUnitPrice,colQtyOnHand,colType);
         productService.clear(txtProductId,txtProductName,txtQtyOnHand,txtUnitPrice,cmbType);
     }
 

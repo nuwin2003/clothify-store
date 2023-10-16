@@ -6,10 +6,11 @@ import dto.EmployeeDto;
 import javafx.scene.control.Alert;
 
 public class EmployeeService {
+
     EmployeeImpl employee = new EmployeeImpl();
     public void save(JFXTextField txtEmployeeId, JFXTextField txtEmployeeName, JFXTextField txtEmployeeEmail, JFXTextField txtContactNumber) {
         EmployeeDto employeeDto = new EmployeeDto(
-                txtEmployeeId.getText(),
+                Integer.parseInt(txtEmployeeId.getText()),
                 txtEmployeeName.getText(),
                 txtEmployeeEmail.getText(),
                 txtContactNumber.getText()

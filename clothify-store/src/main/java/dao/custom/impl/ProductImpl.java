@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -46,7 +47,16 @@ public class ProductImpl implements ProductDao {
 
     @Override
     public List<ProductDto> findAll() {
-        return null;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(ProductEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        Query query = session.createQuery("FROM ProductEntity");
+        List<ProductDto> list = query.list();
+
+        return list;
     }
 
     @Override

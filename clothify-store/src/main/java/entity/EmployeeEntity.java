@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class EmployeeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    String empId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int empId;
     String empName;
     String email;
     String contactNumber;
@@ -16,18 +16,18 @@ public class EmployeeEntity {
     public EmployeeEntity() {
     }
 
-    public EmployeeEntity(String empId, String empName, String email, String contactNumber) {
+    public EmployeeEntity(int empId, String empName, String email, String contactNumber) {
         this.empId = empId;
         this.empName = empName;
         this.email = email;
         this.contactNumber = contactNumber;
     }
 
-    public String getEmpId() {
+    public int getEmpId() {
         return empId;
     }
 
-    public void setEmpId(String empId) {
+    public void setEmpId(int empId) {
         this.empId = empId;
     }
 

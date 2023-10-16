@@ -4,7 +4,12 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.ProductImpl;
 import dto.ProductDto;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 
 public class ProductService {
@@ -13,11 +18,11 @@ public class ProductService {
 
     public void registerProduct(JFXTextField txtProductId, JFXTextField txtProductName, JFXTextField txtQtyOnHand, JFXTextField txtUnitPrice, JFXComboBox<?> cmbType) {
         ProductDto productDto = new ProductDto(
-                txtProductId.getText(),
+                Integer.parseInt(txtProductId.getText()),
                 txtProductName.getText(),
                 Double.parseDouble(txtUnitPrice.getText()),
                 Integer.parseInt(txtQtyOnHand.getText()),
-                cmbType.getTypeSelector()
+                (String) cmbType.getValue()
         );
         if (product.save(productDto)) {
             new Alert(Alert.AlertType.INFORMATION, "Product Saved !").showAndWait();
@@ -29,6 +34,23 @@ public class ProductService {
         txtProductName.setText("");
         txtQtyOnHand.setText("");
         txtUnitPrice.setText("");
-        cmbType.setSelectionModel(null);
+        cmbType.setValue(null);
+    }
+
+    public void loadTable(TableView<ProductDto> tblProduct, TableColumn<?,?> colProductId, TableColumn<?,?> colProductName, TableColumn<?,?> colUnitPrice, TableColumn<?,?> colQtyOnHand, TableColumn<?,?> colType) {
+        colProductId.setCellValueFactory(new PropertyValueFactory<>("prodId"));
+        colProductName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
+        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+
+        ObservableList<ProductDto> list = FXCollections.observableArrayList(product.findAll());
+
+        tblProduct.setItems(list);
+    }
+
+    public void setItems(JFXComboBox<String> cmbType) {
+        ObservableList<String> observableList = FXCollections.observableArrayList("Gents","Ladies","Kids");
+        cmbType.setItems(observableList);
     }
 }

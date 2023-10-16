@@ -3,26 +3,27 @@ package service.impl;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.CustomerImpl;
 import dto.CustomerDto;
-import entity.CustomerEntity;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CustomerService {
 
     CustomerImpl customer = new CustomerImpl();
     public void registerCustomer(JFXTextField txtCustomerId, JFXTextField txtCustomerName, JFXTextField txtCustomerEmail, JFXTextField txtContactNumber) {
-        String customerId = txtCustomerId.getText();
-        String name = txtCustomerName.getText();
-        String email = txtCustomerEmail.getText();
-        String contactNumber = txtContactNumber.getText();
-        CustomerDto customerDto = new CustomerDto(customerId,name,email,contactNumber);
+
+        CustomerDto customerDto = new CustomerDto(
+                Integer.parseInt(txtCustomerId.getText()),
+                txtCustomerName.getText(),
+                txtCustomerEmail.getText(),
+                txtContactNumber.getText()
+        );
 
         if(customer.save(customerDto)){
             new Alert(Alert.AlertType.INFORMATION,"Customer Saved!").show();
-            clear(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
-        }else{
-            new Alert(Alert.AlertType.ERROR,"Customer saving Failed!!").show();
         }
     }
 
@@ -33,7 +34,15 @@ public class CustomerService {
         txtContactNumber.setText("");
     }
 
-    public void loadTable(TableView<?> tblCustomer, TableColumn<?,?> colCustomerId, TableColumn<?,?> colCustomerName, TableColumn<?,?> colCustomerEmail, TableColumn<?,?> colContactNumber) {
-        customer.loadTable((TableView<CustomerEntity>) tblCustomer,colCustomerId,colCustomerName,colCustomerEmail,colContactNumber);
+    public void loadTable(TableView<CustomerDto> tblCustomer, TableColumn<?,?> colCustomerId, TableColumn<?,?> colCustomerName, TableColumn<?,?> colCustomerEmail, TableColumn<?,?> colContactNumber) {
+
+        colCustomerId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        colCustomerName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colCustomerEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
+
+
+        ObservableList<CustomerDto> list = FXCollections.observableArrayList(customer.findAll());
+        tblCustomer.setItems(list);
     }
 }
