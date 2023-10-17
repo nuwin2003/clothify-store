@@ -37,7 +37,27 @@ public class ProductImpl implements ProductDao {
 
     @Override
     public boolean update(ProductDto dto) {
-        return false;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(ProductEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        ProductEntity product = session.find(ProductEntity.class, dto.getProdId());
+
+        product.setName(dto.getName());
+        product.setUnitPrice(dto.getUnitPrice());
+        product.setQtyOnHand(dto.getQtyOnHand());
+        product.setType(dto.getType());
+
+        Transaction transaction = session.beginTransaction();
+        session.save(product);
+
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+
+        return true;
     }
 
     @Override

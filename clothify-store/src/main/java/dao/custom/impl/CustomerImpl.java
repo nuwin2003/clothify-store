@@ -35,7 +35,27 @@ public class CustomerImpl implements CustomerDao {
     }
 
     @Override
-    public boolean update(CustomerDto dto) {return false;}
+    public boolean update(CustomerDto dto) {
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(CustomerEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        CustomerEntity customer = session.find(CustomerEntity.class, dto.getCustomerId());
+
+        customer.setName(dto.getName());
+        customer.setEmail(dto.getEmail());
+        customer.setContactNumber(dto.getContactNumber());
+        Transaction transaction = session.beginTransaction();
+        session.save(customer);
+
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+
+        return true;
+    }
 
     @Override
     public boolean delete(String s) {

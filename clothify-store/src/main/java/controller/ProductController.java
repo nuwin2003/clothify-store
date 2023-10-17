@@ -96,7 +96,12 @@ public class ProductController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Update this Product ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            productService.update(txtProductId,txtProductName,txtUnitPrice,txtQtyOnHand,cmbType);
+            productService.loadTable(tblProduct, colProductId, colProductName, colUnitPrice, colQtyOnHand, colType);
+            productService.clear(txtProductId, txtProductName, txtQtyOnHand, txtUnitPrice, cmbType);
+        }
     }
 
     @FXML

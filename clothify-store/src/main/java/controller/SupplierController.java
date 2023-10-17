@@ -86,7 +86,12 @@ public class SupplierController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Update this Supplier ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            supplierService.update(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
+            supplierService.loadTable(tblSupplier,colSupplierId,colSupplierName,colSupplierEmail,colContactNumber);
+            supplierService.clear(txtSupplierId,txtSupplierName,txtSupplierEmail,txtContactNumber);
+        }
     }
 
     @FXML

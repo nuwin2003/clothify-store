@@ -4,6 +4,7 @@ import dao.custom.SupplierDao;
 import dto.CustomerDto;
 import dto.SupplierDto;
 import entity.CustomerEntity;
+import entity.ProductEntity;
 import entity.SupplierEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -38,7 +39,26 @@ public class SupplierImpl implements SupplierDao {
 
     @Override
     public boolean update(SupplierDto dto) {
-        return false;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(SupplierEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        SupplierEntity supplier = session.find(SupplierEntity.class, dto.getSupId());
+
+        supplier.setName(dto.getName());
+        supplier.setEmail(dto.getEmail());
+        supplier.setContactNumber(dto.getContactNumber());
+
+        Transaction transaction = session.beginTransaction();
+        session.save(supplier);
+
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+
+        return true;
     }
 
     @Override

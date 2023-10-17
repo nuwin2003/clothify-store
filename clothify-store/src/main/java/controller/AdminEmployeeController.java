@@ -86,7 +86,12 @@ public class AdminEmployeeController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Update this Employee ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            employeeService.update(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+            employeeService.loadTable(tblEmployee,colEmpId,colEmpName,colEmpEmail,colContactNumber);
+            employeeService.clear(txtEmployeeId,txtEmployeeName,txtEmployeeEmail,txtContactNumber);
+        }
     }
 
     @FXML

@@ -73,4 +73,17 @@ public class ProductService {
             new Alert(Alert.AlertType.INFORMATION,"Product Deleted!").show();
         }
     }
+
+    public void update(JFXTextField txtProductId, JFXTextField txtProductName, JFXTextField txtUnitPrice, JFXTextField txtQtyOnHand, JFXComboBox<String> cmbType) {
+        ProductDto productDto = new ProductDto(
+                Integer.parseInt(txtProductId.getText()),
+                txtProductName.getText(),
+                Double.parseDouble(txtUnitPrice.getText()),
+                Integer.parseInt(txtQtyOnHand.getText()),
+                cmbType.getValue()
+        );
+        if(product.update(productDto)){
+            new Alert(Alert.AlertType.INFORMATION,"Product updated!").show();
+        };
+    }
 }

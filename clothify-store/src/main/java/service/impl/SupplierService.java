@@ -63,4 +63,16 @@ public class SupplierService {
             new Alert(Alert.AlertType.INFORMATION,"Supplier Deleted!").show();
         }
     }
+
+    public void update(JFXTextField txtSupplierId, JFXTextField txtSupplierName, JFXTextField txtSupplierEmail, JFXTextField txtContactNumber) {
+        SupplierDto supplierDto = new SupplierDto(
+                Integer.parseInt(txtSupplierId.getText()),
+                txtSupplierName.getText(),
+                txtSupplierEmail.getText(),
+                txtContactNumber.getText()
+        );
+        if(supplier.update(supplierDto)){
+            new Alert(Alert.AlertType.INFORMATION,"Supplier Updated!").show();
+        }
+    }
 }

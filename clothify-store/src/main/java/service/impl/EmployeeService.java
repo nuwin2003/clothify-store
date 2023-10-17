@@ -61,4 +61,16 @@ public class EmployeeService {
             new Alert(Alert.AlertType.INFORMATION,"Employee Deleted!").show();
         }
     }
+
+    public void update(JFXTextField txtEmployeeId, JFXTextField txtEmployeeName, JFXTextField txtEmployeeEmail, JFXTextField txtContactNumber) {
+        EmployeeDto employeeDto = new EmployeeDto(
+                Integer.parseInt(txtEmployeeId.getText()),
+                txtEmployeeName.getText(),
+                txtEmployeeEmail.getText(),
+                txtContactNumber.getText()
+        );
+        if(employee.update(employeeDto)){
+            new Alert(Alert.AlertType.INFORMATION,"Employee Updated!").show();
+        }
+    }
 }

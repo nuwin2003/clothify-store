@@ -68,4 +68,16 @@ public class CustomerService {
             new Alert(Alert.AlertType.INFORMATION,"Customer Deleted!").show();
         }
     }
+
+    public void update(JFXTextField txtCustomerId, JFXTextField txtCustomerName, JFXTextField txtCustomerEmail, JFXTextField txtContactNumber) {
+        CustomerDto customerDto = new CustomerDto(
+                Integer.parseInt(txtCustomerId.getText()),
+                txtCustomerName.getText(),
+                txtCustomerEmail.getText(),
+                txtContactNumber.getText()
+        );
+        if(customer.update(customerDto)){
+            new Alert(Alert.AlertType.INFORMATION,"Customer Updated!").show();
+        };
+    }
 }

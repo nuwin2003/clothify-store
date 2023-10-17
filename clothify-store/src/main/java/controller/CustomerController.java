@@ -87,7 +87,12 @@ public class CustomerController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Update this Customer ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            customerService.update(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
+            customerService.loadTable(tblCustomer,colCustomerId,colCustomerName,colCustomerEmail,colContactNumber);
+            customerService.clear(txtCustomerId,txtCustomerName,txtCustomerEmail,txtContactNumber);
+        }
     }
 
     @FXML

@@ -1,0 +1,9 @@
+
+g	java:S112%"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8î²Øö²1
+g	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8î²Øö²1
+g	java:S112:"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8î²Øö²1
+g	java:S112D"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Þ°Úö²1
+[
+java:S18540">Remove this useless assignment to local variable "buttonType".(¿Ý¢Æ8ú²Øö²1
+L
+java:S14810"/Remove this unused "buttonType" local variable.(¿Ý¢Æ8ý²Øö²1

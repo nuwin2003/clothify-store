@@ -36,7 +36,26 @@ public class EmployeeImpl implements EmployeeDao {
 
     @Override
     public boolean update(EmployeeDto dto) {
-        return false;
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(EmployeeEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        EmployeeEntity employee = session.find(EmployeeEntity.class, dto.getEmpId());
+
+        employee.setEmpName(dto.getEmpName());
+        employee.setEmail(dto.getEmail());
+        employee.setContactNumber(dto.getContactNumber());
+
+        Transaction transaction = session.beginTransaction();
+        session.save(employee);
+
+        transaction.commit();
+
+        session.close();
+        sessionFactory.close();
+
+        return true;
     }
 
     @Override
