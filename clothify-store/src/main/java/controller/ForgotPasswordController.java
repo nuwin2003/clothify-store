@@ -4,7 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import service.impl.ForgotPasswordService;
+import service.ForgotPasswordService;
 
 public class ForgotPasswordController {
     @FXML

@@ -1,4 +1,4 @@
-package service.impl;
+package service;
 
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.CustomerImpl;

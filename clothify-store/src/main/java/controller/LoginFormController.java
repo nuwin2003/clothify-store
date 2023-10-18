@@ -5,9 +5,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import service.LoginFormService;
-import service.impl.LoginFormServiceImpl;
 
 public class LoginFormController {
     @FXML
@@ -37,7 +35,7 @@ public class LoginFormController {
     @FXML
     private JFXButton btnExit;
 
-    LoginFormService loginFormServiceImpl = new LoginFormServiceImpl();
+    LoginFormService loginFormServiceImpl = new LoginFormService();
 
     @FXML
     void btnExitOnClick(ActionEvent event) {

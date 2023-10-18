@@ -1,4 +1,4 @@
-package service.impl;
+package service;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class UserRegistrationService {
+public class ForgotPasswordService {
     public void back(ActionEvent event) {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         try {

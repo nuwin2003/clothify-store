@@ -1,4 +1,4 @@
-package service.impl;
+package service;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

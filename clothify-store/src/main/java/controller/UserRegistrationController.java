@@ -6,7 +6,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import service.impl.UserRegistrationService;
+import service.UserRegistrationService;
 
 
 public class UserRegistrationController {

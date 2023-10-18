@@ -1,10 +1,7 @@
 package dao.custom.impl;
 
 import dao.custom.SupplierDao;
-import dto.CustomerDto;
 import dto.SupplierDto;
-import entity.CustomerEntity;
-import entity.ProductEntity;
 import entity.SupplierEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

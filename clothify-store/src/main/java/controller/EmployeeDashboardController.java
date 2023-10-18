@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import service.impl.EmployeeDashboardService;
+import service.EmployeeDashboardService;
 
 import java.io.IOException;
 

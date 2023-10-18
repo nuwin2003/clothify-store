@@ -8,8 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
-import service.impl.PlaceOrderService;
+import service.PlaceOrderService;
+
 
 public class PlaceOrderFormController {
     @FXML
@@ -70,6 +70,10 @@ public class PlaceOrderFormController {
     private Label lblItemName;
 
     PlaceOrderService placeOrderService = new PlaceOrderService();
+
+    public void initialize(){
+        placeOrderService.loadItemCodes(cmbItemCode);
+    }
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
 
@@ -81,7 +85,7 @@ public class PlaceOrderFormController {
     }
 
     @FXML
-    void btnRegisterCustomerOnAction(ActionEvent event) {
+    void btnRegisterCustomerOnAction(ActionEvent event){
 
     }
 

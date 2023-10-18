@@ -6,7 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import service.impl.AdminDashboardService;
+import service.AdminDashboardService;
 
 import java.io.IOException;
 
@@ -96,4 +96,5 @@ public class AdminDashboardController {
     void btnExitOnAction(ActionEvent event) {
         adminDashboardService.exit();
     }
+
 }
