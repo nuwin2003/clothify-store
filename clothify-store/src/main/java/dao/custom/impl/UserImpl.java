@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -56,5 +57,27 @@ public class UserImpl implements UserDao {
     @Override
     public UserDto findById(String s) {
         return null;
+    }
+
+    @Override
+    public UserEntity findUser(String userName,String password) {
+        Configuration configuration = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(UserEntity.class);
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query<UserEntity> query = session.createQuery("From UserEntity WHERE userName = :userName ", UserEntity.class);
+        query.setParameter("userName", userName);
+        UserEntity user = query.uniqueResult();
+
+        if(user != null && user.getPassword().equals(password)){
+            transaction.commit();
+            return user;
+        }else{
+            transaction.rollback();
+            return null;
+        }
     }
 }

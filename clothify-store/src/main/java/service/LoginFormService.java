@@ -3,6 +3,8 @@ package service;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import dao.custom.impl.UserImpl;
+import entity.UserEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,6 +18,8 @@ import java.util.Optional;
 
 public class LoginFormService {
 
+    UserImpl user = new UserImpl();
+
     String userType;
     public void exit(){
         Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you really want to Exit ?",ButtonType.YES,ButtonType.NO).showAndWait();
@@ -27,7 +31,10 @@ public class LoginFormService {
     public void login(ActionEvent event, JFXTextField txtUserName, JFXPasswordField txtPassword){
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
-        if(userName.equalsIgnoreCase("Nuwin") && password.equals("47212") && userType.equals("Admin")) {
+
+        UserEntity userEntity = user.findUser(userName,password);
+
+        if(userEntity!= null && userEntity.getType().equals("Admin") && userType.equals(userEntity.getType())) {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             try {
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin_dashboard_form.fxml"))));
@@ -35,7 +42,7 @@ public class LoginFormService {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        } else if (userName.equalsIgnoreCase("Nuwin") && password.equals("47212") && userType.equals("Employee")) {
+        } else if (userEntity != null && userEntity.getType().equals("Employee") && userType.equals(userEntity.getType())) {
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             try {
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/employee_dashboard_form.fxml"))));
@@ -44,7 +51,7 @@ public class LoginFormService {
                 throw new RuntimeException(e);
             }
         } else{
-            Optional<ButtonType> buttonType = new Alert(Alert.AlertType.ERROR,"Login Error!",ButtonType.OK).showAndWait();
+            new Alert(Alert.AlertType.ERROR,"Login Error!").show();
         }
     }
 

@@ -12,5 +12,7 @@ public class UserDto {
     int userId;
     String userName;
     String password;
+    String email;
+    String contactNumber;
     String type;
 }

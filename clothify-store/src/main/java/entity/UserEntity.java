@@ -11,6 +11,8 @@ public class UserEntity {
     int userId;
     String userName;
     String password;
+    String email;
+    String contactNumber;
     String type;
 
     public UserEntity() {
@@ -53,5 +55,21 @@ public class UserEntity {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 }

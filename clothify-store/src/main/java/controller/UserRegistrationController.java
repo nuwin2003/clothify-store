@@ -26,7 +26,7 @@ public class UserRegistrationController {
     private JFXButton btnSend;
 
     @FXML
-    private JFXComboBox<?> cmbUserType;
+    private JFXComboBox<String> cmbUserType;
 
     @FXML
     private JFXTextField txtNewUserName;
@@ -53,6 +53,10 @@ public class UserRegistrationController {
     private JFXButton btnBack;
 
     UserRegistrationService userRegistrationService = new UserRegistrationService();
+
+    public void initialize(){
+        userRegistrationService.setItems(cmbUserType);
+    }
     @FXML
     void btnBackOnAction(ActionEvent event) {
         userRegistrationService.back(event);
@@ -65,7 +69,7 @@ public class UserRegistrationController {
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
-
+        userRegistrationService.registerUser(txtNewUserName,txtEmail,txtPassword,txtConfirmPassword,txtContactNumber,cmbUserType);
     }
 
     @FXML

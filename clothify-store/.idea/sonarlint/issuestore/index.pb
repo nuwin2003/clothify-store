@@ -1,16 +1,10 @@
 
-U
-%src/main/java/dao/custom/UserDao.java,4\9\49c7f008db4522fee47b03361065c7bf35c9c601
-h
-8src/main/java/controller/UserRegistrationController.java,a\3\a3c4e075fc698b3f44de824e39e62c87fefc6d5d
 g
 7src/main/java/service/impl/UserRegistrationService.java,5\f\5f70982bb8459bf344c8949dae30d1702c3ad832
 Y
 )src/main/java/dao/custom/SupplierDao.java,0\2\026e54580cc7c78cf3996afcf5d1cbf22f83fc68
 Y
 )src/main/java/dao/custom/EmployeeDao.java,3\4\3423fc0ba520683afee4f5cc05fcb89f7d03898f
-T
-$src/main/java/entity/UserEntity.java,d\f\dfb9afec9e9226b3755a383af59ab16b35a00392
 X
 (src/main/java/entity/EmployeeEntity.java,d\4\d433ed0fd6b9bcd519070a95cd7a8208f5d68fb8
 a
@@ -19,8 +13,6 @@ e
 5src/main/java/service/impl/ForgotPasswordService.java,2\d\2d01cfc8332a2fb2509148569dd68f075c0aead7
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-N
-src/main/java/dto/UserDto.java,1\5\15c81aa038b853c33b659e8125608969dae8b684
 X
 (src/main/java/entity/SupplierEntity.java,4\a\4a34661eab5aedbc3963a60e59ca8f056d532d0a
 h
@@ -31,7 +23,5 @@ e
 5src/main/java/service/impl/AdminDashboardService.java,8\6\86b038327da6fa09817ce06552442e5deb57ea01
 R
 "src/main/java/dto/EmployeeDto.java,9\c\9cbcdb70bc07a7c9cf08e08cee891420e216caad
-[
-+src/main/java/dao/custom/impl/UserImpl.java,a\7\a72c803dc4d0abdcfc7658764322bbfeb058a6b4
 R
 "src/main/java/dto/SupplierDto.java,9\c\9ce34bd83f9a85d74507959184f9bc47d80cba30
