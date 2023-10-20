@@ -5,15 +5,23 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.UserImpl;
 import entity.UserEntity;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 public class LoginFormService {
@@ -87,5 +95,27 @@ public class LoginFormService {
     public void clear(JFXTextField txtUserName, JFXPasswordField txtPassword){
         txtUserName.setText("");
         txtPassword.setText("");
+    }
+
+    public void setDateAndTime(Label lblDate, Label lblTime) {
+        Timeline timeline = new Timeline(
+                new KeyFrame(
+                        Duration.seconds(1), // Update every second
+                        new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                LocalTime currentTime = LocalTime.now();
+                                DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                                String formattedTime = currentTime.format(timeFormatter);
+                                lblTime.setText(formattedTime);
+                            }
+                        }
+                )
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE); // Run indefinitely
+        timeline.play();
+
+        LocalDate localDate = LocalDate.now();
+        lblDate.setText(localDate.toString());
     }
 }

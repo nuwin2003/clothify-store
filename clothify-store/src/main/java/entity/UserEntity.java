@@ -18,10 +18,12 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(int userId, String userName, String password, String type) {
+    public UserEntity(int userId, String userName, String password, String email, String contactNumber, String type) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
+        this.email = email;
+        this.contactNumber = contactNumber;
         this.type = type;
     }
 

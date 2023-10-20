@@ -6,7 +6,11 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import service.UserRegistrationService;
+
+import java.util.Optional;
 
 
 public class UserRegistrationController {
@@ -35,10 +39,10 @@ public class UserRegistrationController {
     private JFXTextField txtEmail;
 
     @FXML
-    private JFXTextField txtConfirmPassword;
+    private JFXPasswordField txtPassword;
 
     @FXML
-    private JFXTextField txtPassword;
+    private JFXPasswordField txtConfirmPassword;
 
     @FXML
     private JFXButton btnRegister;
@@ -69,7 +73,11 @@ public class UserRegistrationController {
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
-        userRegistrationService.registerUser(txtNewUserName,txtEmail,txtPassword,txtConfirmPassword,txtContactNumber,cmbUserType);
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to Register this User ?",ButtonType.YES,ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
+            userRegistrationService.registerUser(txtNewUserName,txtEmail,txtPassword,txtConfirmPassword,txtContactNumber,cmbUserType);
+            userRegistrationService.clear(txtNewUserName,txtEmail,txtPassword,txtConfirmPassword,txtContactNumber,cmbUserType);
+        }
     }
 
     @FXML

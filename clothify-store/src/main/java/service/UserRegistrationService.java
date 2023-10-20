@@ -1,6 +1,7 @@
 package service;
 
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import dao.custom.impl.UserImpl;
 import dto.UserDto;
@@ -29,7 +30,7 @@ public class UserRegistrationService {
         }
     }
 
-    public void registerUser(JFXTextField txtNewUserName, JFXTextField txtEmail, JFXTextField txtPassword, JFXTextField txtConfirmPassword, JFXTextField txtContactNumber, JFXComboBox<?> cmbUserType) {
+    public void registerUser(JFXTextField txtNewUserName, JFXTextField txtEmail, JFXPasswordField txtPassword, JFXPasswordField txtConfirmPassword, JFXTextField txtContactNumber, JFXComboBox<?> cmbUserType) {
         if(txtPassword.getText().equals(txtConfirmPassword.getText())){
             UserDto userDto = new UserDto(
                     1,
@@ -48,5 +49,14 @@ public class UserRegistrationService {
     public void setItems(JFXComboBox<String> cmbUserType) {
         ObservableList<String> observableList = FXCollections.observableArrayList("Admin","Employee");
         cmbUserType.setItems(observableList);
+    }
+
+    public void clear(JFXTextField txtNewUserName, JFXTextField txtEmail, JFXPasswordField txtPassword, JFXPasswordField txtConfirmPassword, JFXTextField txtContactNumber, JFXComboBox<String> cmbUserType) {
+        txtNewUserName.setText("");
+        txtEmail.setText("");
+        txtPassword.setText("");
+        txtConfirmPassword.setText("");
+        txtContactNumber.setText("");
+        cmbUserType.setValue(null);
     }
 }

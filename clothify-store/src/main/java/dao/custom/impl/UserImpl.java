@@ -18,6 +18,8 @@ public class UserImpl implements UserDao {
                 dto.getUserId(),
                 dto.getUserName(),
                 dto.getPassword(),
+                dto.getEmail(),
+                dto.getContactNumber(),
                 dto.getType()
         );
         Configuration configuration = new Configuration()

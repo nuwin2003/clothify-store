@@ -116,22 +116,12 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtNewUserName" layoutX="589.0" layoutY="52.0" prefHeight="35.0" prefWidth="229.0">
+            <JFXTextField fx:id="txtNewUserName" layoutX="589.0" layoutY="52.0" prefHeight="40.0" prefWidth="229.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtEmail" layoutX="589.0" layoutY="98.0" prefHeight="35.0" prefWidth="229.0">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="txtConfirmPassword" layoutX="589.0" layoutY="200.0" prefHeight="35.0" prefWidth="229.0">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="txtPassword" layoutX="589.0" layoutY="149.0" prefHeight="39.0" prefWidth="229.0">
+            <JFXTextField fx:id="txtEmail" layoutX="589.0" layoutY="98.0" prefHeight="40.0" prefWidth="229.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -157,11 +147,13 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtContactNumber" layoutX="589.0" layoutY="246.0" prefHeight="35.0" prefWidth="229.0">
+            <JFXTextField fx:id="txtContactNumber" layoutX="589.0" layoutY="246.0" prefHeight="40.0" prefWidth="229.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXTextField>
+            <JFXPasswordField fx:id="txtPassword" layoutX="589.0" layoutY="147.0" prefHeight="40.0" prefWidth="229.0" />
+            <JFXPasswordField fx:id="txtConfirmPassword" layoutX="589.0" layoutY="200.0" prefHeight="40.0" prefWidth="229.0" />
          </children>
       </AnchorPane>
       <JFXButton fx:id="btnBack" layoutX="28.0" layoutY="25.0" onAction="#btnBackOnAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: yellow; -fx-background-radius: 10;" text="Back">

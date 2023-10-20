@@ -5,9 +5,15 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import service.LoginFormService;
 
 public class LoginFormController {
+    @FXML
+    private Label lblDate;
+
+    @FXML
+    private Label lblTime;
     @FXML
     private JFXButton btnAdmin;
 
@@ -37,6 +43,9 @@ public class LoginFormController {
 
     LoginFormService loginFormServiceImpl = new LoginFormService();
 
+    public void initialize(){
+        loginFormServiceImpl.setDateAndTime(lblDate,lblTime);
+    }
     @FXML
     void btnExitOnClick(ActionEvent event) {
         loginFormServiceImpl.exit();
